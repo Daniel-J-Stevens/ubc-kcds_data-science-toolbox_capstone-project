@@ -3,6 +3,11 @@
 
 format: jb-book
 root: intro
-chapters:
-- file: notebooks/trees_analysis
-- file: notebooks/trees_EDA
+parts:
+  - caption: Data Exploration
+    chapters:
+    - file: notebooks/trees_EDA
+  - caption: Data Analysis
+    - file: docs/analysis_intro
+    - file: notebooks/trees_analysis
+
