@@ -1,3 +1,4 @@
+# Introduction
 Vancouver is a city located on the west coast of Canada, perched between the North Shore Mountains and the Pacific Ocean. Known for its spectacular natural environment, it has been consistently ranked one of the most livable cities in the world throughout the last decade.
 
 Climate modeling conducted by the Pacific Climate Impacts Consortium in 2016 predicts that the average temperature in the Vancouver region will increase by 3°C by the 2050s and a dramatic increase in days in which the temperature exceeds 25°C will be seen, from an average of 22 days per year to 55 (Climate Projections for Metro Vancouver, 2016). Between June 25th and July 1st of 2021, temperatures rose above 40°C throughout the Province of British Columbia, resulting in 99 deaths in the City of Vancouver (CBC News).
