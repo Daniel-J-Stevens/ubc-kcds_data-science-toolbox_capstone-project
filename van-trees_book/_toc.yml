@@ -6,9 +6,15 @@ root: intro
 parts:
   - caption: Data Exploration
     chapters:
+    - file: docs/exploration_intro
     - file: notebooks/trees_EDA
+    - file: docs/exploration_discussion
   - caption: Data Analysis
     chapters:
     - file: docs/analysis_intro
     - file: notebooks/trees_analysis
+    - file: docs/analysis_discussion
+  - caption: References
+    chapters:
+    - file: docs/references
 
