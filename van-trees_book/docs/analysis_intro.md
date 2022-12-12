@@ -17,16 +17,26 @@ The urban forest plays one of many key roles in the City of Vancouver's climate 
 
 Understanding the composition of the Vancouver street tree population is vital to its stewardship. We will examine the street tree population through importance value, which is a calculation that takes into account both abundance and size (in the form of dominance) when determining a group's contribution to the overall population, as used by McPherson and Rowntree (1989) in their characterization of various street tree populations at the species level. We will apply the following formulas at the genus level to the Vancouver street tree population:
 
-* $ basal\ area\ =\pi\cdot(\frac{diameter}{2})^2\\ $
-<br>
-* $ relative\ dominance\ =\ \frac{total\ basal\ area\ of\ genus\ X}{total\ basal\ area\ of\ population}\cdot100\\ $
-<br>
-* $ relative\ abundance\ =\ \frac{number\ of\ individuals\ of\ genus\ X}{total\ individuals\ in\ population}\cdot100\\ $
-<br>
-* $ importance\ value\ =\ relative\ abundance + relative\ dominance $
-<br>
-<br>
-* $ relative\ importance\ =\ \frac{total\ importance\ value\ of\ genus\ X}{total\ importance\ value\ of\ population}\cdot100\\ $
+```{math}
+:label: relative_abundance_analysis
+relative\ abundance\ =\ \frac{number\ of\ individuals\ of\ genus\ X}{total\ individuals\ in\ population}\cdot100\\
+```
+```{math}
+:label: basal_area_analysis
+basal\ area\ =\pi\cdot(\frac{diameter}{2})^2\\
+```
+```{math}
+:label: relative_dominance_analysis
+relative\ dominance\ =\ \frac{total\ basal\ area\ of\ genus\ X}{total\ basal\ area\ of\ population}\cdot100\\
+```
+```{math}
+:label:  importance_value_analysis
+importance\ value\ =\ relative\ abundance + relative\ dominance
+```
+```{math}
+:label: relative_importance_analysis
+relative\ importance\ =\ \frac{total\ importance\ value\ of\ genus\ X}{total\ importance\ value\ of\ population}\cdot100\\
+```
 
 <b>Using these calculations, we hope to answer the following questions:</b>
 * <i>How do the various genera in the Vancouver street tree population compare to one another in terms of importance to the total population?
