@@ -1,4 +1,6 @@
-# Questions to Answer
+# Introduction
+
+The first step in any data analysis process is to explore the data. To do this, we will use a combination of the Pandas library which allows exploration through manipulation of paneled data, and Altair, which is a library used for statistical data visualization. To obtain a rough outline of our formal analysis, we will be exploring the following questions:
 
 [](question_1) How do the various genera in the Vancouver street tree population rank in relation to one another in terms of importance to the total population?
 
