@@ -85,3 +85,7 @@ Vancouver GeoJSON. UBC-MDS, 10 June 2021, raw.githubusercontent.com/UBC-MDS/expl
 (tree-id_093845_ref)=
 ### ("Lat:49.273067, Long:-123.150309. Vancouver, BC.")
 "Lat:49.273067, Long:-123.150309. Vancouver, BC." Google Maps, https://maps.google.com/?q=49.273067,-123.150309. Accessed 20 Dec. 2021.
+
+(logo)=
+### (“Trees at Pacific Spirit Park, University of British Columbia Campus, Vancouver, Canada.”)
+“Trees at Pacific Spirit Park, University of British Columbia Campus, Vancouver, Canada.” Wikimedia, 31 Jan. 2011, upload.wikimedia.org/wikipedia/commons/f/f4/Trees_pacific_spirit_ubc.jpg. Accessed 12 Dec. 2022.
