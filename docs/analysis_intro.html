@@ -1,0 +1,471 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction &#8212; Vancouver Street Trees- Analysis through Importance Values</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Analysis" href="../notebooks/trees_analysis.html" />
+    <link rel="prev" title="Discussion" href="exploration_discussion.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="../_static/Trees_pacific_spirit_ubc.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Vancouver Street Trees- Analysis through Importance Values</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    The Data Science Toolbox- Assignment 8- Daniel Stevens
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Exploration
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="exploration_intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/trees_EDA.html">
+   Exploration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="exploration_discussion.html">
+   Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Data Analysis
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../notebooks/trees_analysis.html">
+   Analysis
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="analysis_discussion.html">
+   Discussion
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  References
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="../_sources/docs/analysis_intro.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.md</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equations">
+   Equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-sources">
+   Data Sources
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Introduction</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#equations">
+   Equations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#questions">
+   Questions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-sources">
+   Data Sources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
+<figure class="align-default" id="vancouver-skyline">
+<a class="reference internal image-reference" href="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg"><img alt="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg" src="https://upload.wikimedia.org/wikipedia/commons/5/57/Concord_Pacific_Master_Plan_Area.jpg" style="height: 300px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 16 </span><span class="caption-text">Vancouver skyline with street trees pictured in foreground <a class="reference internal" href="references.html#vancouver-skyline"><span class="std std-ref">(“Concord Pacific Master Plan Area”)</span></a>.</span><a class="headerlink" href="#vancouver-skyline" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Vancouver is a city located on the west coast of Canada, perched between the North Shore Mountains and the Pacific Ocean. Known for its spectacular natural environment, it has been consistently ranked one of the most livable cities in the world throughout the last decade.</p>
+<p>Climate modeling conducted by the Pacific Climate Impacts Consortium in 2016 predicts that the average temperature in the Vancouver region will increase by 3°C by the 2050s and a dramatic increase in days in which the temperature exceeds 25°C will be seen, from an average of 22 days per year to 55 <a class="reference internal" href="references.html#climate-projections-2021"><span class="std std-ref">(Climate Projections for Metro Vancouver 2016)</span></a>. Between June 25th and July 1st of 2021, temperatures rose above 40°C throughout the Province of British Columbia, resulting in 99 deaths in the City of Vancouver <a class="reference internal" href="references.html#gomez-2021"><span class="std std-ref">(Gomez 2021)</span></a>.</p>
+<p>In 2014, the City of Vancouver adopted the Urban Forest Strategy as part of its goal to become the greenest city in the world by 2020. The goal of the Urban Forest Strategy is to “protect, plant, and manage trees to create a diverse, resilient, and beautiful urban forest on public and private lands across the city.” <a class="reference internal" href="references.html#urban-forest-strategy-2018"><span class="std std-ref">(Urban Forest Strategy 2018)</span></a>.</p>
+<p>The urban forest plays one of many key roles in the City of Vancouver’s climate adaptation strategy. Trees in the urban environment mitigate the urban heat island effect which is an increase in temperature in urban areas due to lower tree canopy cover and a high density of heat-absorbing structures such as roads and buildings <a class="reference internal" href="references.html#urban-forest-strategy-2018"><span class="std std-ref">(Urban Forest Strategy 2018)</span></a>. Approximately 30% of the Vancouver tree population consisted of street trees at the time of the adoption of the Urban Forest Plan in 2014 <a class="reference internal" href="references.html#urban-forest-strategy-2018"><span class="std std-ref">(Urban Forest Strategy 2018)</span></a>. As such, street trees are central to the urban forest and play an important role in its effort to aid in climate change adaptation.</p>
+<p>Understanding the composition of the Vancouver street tree population is vital to its stewardship. We will examine the street tree population through importance value, which is a calculation that takes into account both abundance and size (in the form of dominance) when determining a group’s contribution to the overall population, as used by McPherson and Rowntree <a class="reference internal" href="references.html#mcpherson-1989"><span class="std std-ref">(McPherson et al. 1989)</span></a> in their characterization of various street tree populations at the species level. We will apply the following equations at the genus level to the Vancouver street tree population:</p>
+<section id="equations">
+<span id="importance-formulas"></span><h2>Equations<a class="headerlink" href="#equations" title="Permalink to this headline">#</a></h2>
+<div class="math notranslate nohighlight" id="equation-relative-abundance-analysis">
+<span class="eqno">(6)<a class="headerlink" href="#equation-relative-abundance-analysis" title="Permalink to this equation">#</a></span>\[\begin{split}relative\ abundance\ =\ \frac{number\ of\ individuals\ of\ genus\ X}{total\ individuals\ in\ population}\cdot100\\\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-basal-area-analysis">
+<span class="eqno">(7)<a class="headerlink" href="#equation-basal-area-analysis" title="Permalink to this equation">#</a></span>\[\begin{split}basal\ area\ =\pi\cdot(\frac{diameter}{2})^2\\\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-relative-dominance-analysis">
+<span class="eqno">(8)<a class="headerlink" href="#equation-relative-dominance-analysis" title="Permalink to this equation">#</a></span>\[\begin{split}relative\ dominance\ =\ \frac{total\ basal\ area\ of\ genus\ X}{total\ basal\ area\ of\ population}\cdot100\\\end{split}\]</div>
+<div class="math notranslate nohighlight" id="equation-importance-value-analysis">
+<span class="eqno">(9)<a class="headerlink" href="#equation-importance-value-analysis" title="Permalink to this equation">#</a></span>\[importance\ value\ =\ relative\ abundance + relative\ dominance\]</div>
+<div class="math notranslate nohighlight" id="equation-relative-importance-analysis">
+<span class="eqno">(10)<a class="headerlink" href="#equation-relative-importance-analysis" title="Permalink to this equation">#</a></span>\[\begin{split}relative\ importance\ =\ \frac{total\ importance\ value\ of\ genus\ X}{total\ importance\ value\ of\ population}\cdot100\\\end{split}\]</div>
+</section>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Permalink to this headline">#</a></h2>
+<p><strong>Using these calculations, we hope to answer the following questions:</strong></p>
+<p><a class="reference internal" href="../notebooks/trees_analysis.html#question-1-a"><span class="std std-ref">Question 1:</span></a> <i>How do the various genera in the Vancouver street tree population compare to one another in terms of importance to the total population?</i></p>
+<p><a class="reference internal" href="../notebooks/trees_analysis.html#question-2-a"><span class="std std-ref">Question 2:</span></a> <i>How do the different size classes of the top 3 genera contribute to each genus’ importance in the population, and is there a difference in this distribution between these genera?</i></p>
+<p><a class="reference internal" href="../notebooks/trees_analysis.html#question-3-a"><span class="std std-ref">Question 3:</span></a> <i>How do Vancouver neighbourhoods compare in terms of importance value density of the street tree population?</i></p>
+<p><a class="reference internal" href="../notebooks/trees_analysis.html#question-4-a"><span class="std std-ref">Question 4:</span></a> <i>How is the importance value of the various street tree genera distributed throughout Vancouver?</i></p>
+</section>
+<section id="data-sources">
+<h2>Data Sources<a class="headerlink" href="#data-sources" title="Permalink to this headline">#</a></h2>
+<p>We will be using a subset of the Vancouver street trees dataset available through the <a class="reference external" href="https://opendata.vancouver.ca/explore/dataset/street-trees/information/?disjunctive.species_name&amp;disjunctive.common_name&amp;disjunctive.height_range_id">City of Vancouver’s Open Data Portal</a> <a class="reference internal" href="references.html#street-trees-2016"><span class="std std-ref">(Vancouver Board of Parks and Recreation 2016)</span></a>. The subsetted data can be found in the UBC Exploratory Data Visualization <a class="reference external" href="https://raw.githubusercontent.com/UBC-MDS/exploratory-data-viz/main/data/vancouver_trees.csv">GitHub Data Repository</a> <a class="reference internal" href="references.html#trees-subset-2021"><span class="std std-ref">(UBC-MDS 2021)</span></a>.
+Land area for each neighbourhood was obtained from the <a class="reference external" href="http://vancouver.ca/news-calendar/areas-of-the-city.aspx">City of Vancouver Website</a> <a class="reference internal" href="references.html#areas-of-city"><span class="std std-ref">(City of Vancouver 2016)</span></a> and uploaded to a <a class="reference external" href="https://raw.githubusercontent.com/Daniel-J-Stevens/data-science-toolbox_assignment-8/main/van-trees_book/data/neighbourhood_demographics.csv">GitHub Data Repository</a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="exploration_discussion.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Discussion</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../notebooks/trees_analysis.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Analysis</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Daniel Stevens<br/>
+  
+      &copy; Copyright 2022.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
