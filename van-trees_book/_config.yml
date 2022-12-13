@@ -3,7 +3,7 @@
 
 title: Vancouver Street Trees- Analysis through Importance Values
 author: Daniel Stevens
-logo: Trees_pacific_spirit_ubc.jpg
+logo: images/Trees_pacific_spirit_ubc.jpg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
