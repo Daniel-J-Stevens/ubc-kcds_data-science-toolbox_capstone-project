@@ -2,7 +2,11 @@
 
 This is the capstone project for The Data Science Toolbox course offered as part of the Key Capabilities in Data Science certificate program administered by UBC Extended Learning.
 
-The Data Science Toolbox Course aims to equip students with core skills used in a data science discipline such as working in the shell, creation of virtual entiroments, package management, version control, working in an IED and much more.
+The Data Science Toolbox Course aims to equip students with core skills used in a data science discipline such as working in the shell, creation of virtual entiroments, package management, version control, working in an IED, markdown language and much more.
 
 <b>More information about the course can be found here:</b> [The Data Science Toolbox](https://extendedlearning.ubc.ca/courses/data-science-toolbox/fs041)
+
+<b>Course content can be found here:</b>:[The Data Science Toolbox- Course Material](https://toolbox-learn.mds.ubc.ca/en)
+
+This project challenged students to create a website through GitHub pages using the skills they acquired throughout the course. The webpage created is based on the exploratory data analysis and final report on the Vancouver street trees dataset produced through the Data Visualization course capstone project. The report explores the Vancouver street tree population through neighbourhood and importance value with the aim of 
 
